@@ -1,0 +1,4 @@
+<button type="button" (click)="toggleDisplay()" *ngIf="icon != 'plus'">
+    <i class="fa fa-search"></i>
+</button>
+<a class="fa fa-plus float-left" (click)="toggleDisplay()" *ngIf="icon == 'plus'" title="{{'Search'|translate}}"></a>

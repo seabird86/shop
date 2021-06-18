@@ -1,0 +1,17 @@
+<p-menubar>
+    <app-language></app-language>
+</p-menubar>
+<div class="p-d-flex p-jc-center">
+    <p-card header="{{'SIGNIN'|translate}}">
+        <ng-template pTemplate="footer">
+            <div class="p-mb-3">
+            <button pButton pRipple icon="pi pi-google" class="p-button-rounded p-button-danger p-button-outlined" label="Google Account" style="width:178px"
+                (click)="signInWithGoogle()"></button><br/>
+            </div>
+            <div>
+            <button pButton pRipple icon="pi pi-facebook" class="p-button-rounded p-button-outlined" label="Facebook Account"
+                (click)="signInWithFB()"></button>
+            </div>
+        </ng-template>
+    </p-card>
+</div>

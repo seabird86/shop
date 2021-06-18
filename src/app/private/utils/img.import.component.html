@@ -1,0 +1,9 @@
+<a class="fa {{icon}} float-left" (click)="toggleDisplay()" title="{{title}}"></a>
+<p-dialog header="{{headTitle|translate}}" [(visible)]="display" [responsive]="true" class="text-left">
+    <form class="form" role="form" method="POST" enctype="multipart/form-data" id="fileUploadForm" (ngSubmit)="submit()">
+        <input type="file" name="files" accept="{{accept}}" (change)="selectFile($event)" />
+    </form>
+    <p-footer>
+        <button type="button" pButton icon="fa-check" (click)="select()" [disabled]="selectedFiles == null" label="{{'check'|translate}}"></button>
+    </p-footer>
+</p-dialog>

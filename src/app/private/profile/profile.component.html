@@ -1,0 +1,8 @@
+<div class="p-d-flex p-jc-center">
+    <button pButton pRipple type="button" icon="pi" class="p-button-rounded p-button-outlined" *ngIf="getUser().photoUrl==null">        
+        <i class="pi pi-user"></i>
+    </button>
+    <img src="{{getUser()?.photoUrl}}" alt="Avatar" class="avatar" *ngIf="getUser().photoUrl!=null">
+</div>
+<div class="p-text-center p-mt-4 p-mb-2"><b>{{getUser().name}}</b></div>
+<div class="p-text-center p-mb-3"><small>{{getUser().email}}</small></div>

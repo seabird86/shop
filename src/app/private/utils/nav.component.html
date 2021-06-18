@@ -1,0 +1,29 @@
+<p-menubar>
+    <ng-template pTemplate="start">
+        <button #btn type="button" pButton icon="pi pi-bars" (click)="toggleVisible()"></button>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <p-menu #rightMenu [model]="rightItems" [popup]="true"></p-menu>
+        <button pButton pRipple type="button" icon="pi" class="p-button-rounded p-button-outlined"
+            (click)="rightMenu.toggle($event)">
+            <i class="pi pi-user" *ngIf="getUser().photoUrl==null"></i>
+            <img src="{{getUser().photoUrl}}" alt="Avatar" class="avatar" *ngIf="getUser().photoUrl!=null">
+        </button>
+    </ng-template>
+</p-menubar>
+<div *ngIf="visible">
+    <p-sidebar [(visible)]="visible" [baseZIndex]="10000" [modal]="false">
+        <p-panelMenu [model]="leftItems" item-width="100%"></p-panelMenu>
+    </p-sidebar>
+</div>
+
+<div *ngIf="profileVisible">
+    <p-dialog [visible]="true" [closable]="false" [modal]="true" [baseZIndex]="10000" [position]="'top-right'"
+        [draggable]="false" [style]="{width: '354px'}">
+        <app-profile></app-profile>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="profileVisible=false" label="Ok" styleClass="p-button-text">
+            </p-button>
+        </ng-template>
+    </p-dialog>
+</div>

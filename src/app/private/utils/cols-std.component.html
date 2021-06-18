@@ -1,0 +1,21 @@
+<ng-container *ngIf="section==='header'">
+    {{dataTable.columns[dataTable.columns.length-4].field}}
+    <th [pSortableColumn]="dataTable.columns[dataTable.columns.length-4].field">{{'created_by'|translate}}
+        <p-sortIcon [field]="dataTable.columns[dataTable.columns.length-4].field"></p-sortIcon>
+    </th>
+    <th [pSortableColumn]="dataTable.columns[dataTable.columns.length-3].field">{{'created_date'|translate}}
+        <p-sortIcon [field]="dataTable.columns[dataTable.columns.length-3].field"></p-sortIcon>
+    </th>
+    <th [pSortableColumn]="dataTable.columns[dataTable.columns.length-2].field">{{'updated_by'|translate}}
+        <p-sortIcon [field]="dataTable.columns[dataTable.columns.length-2].field"></p-sortIcon>
+    </th>
+    <th [pSortableColumn]="dataTable.columns[dataTable.columns.length-1].field">{{'updated_date'|translate}}
+        <p-sortIcon [field]="dataTable.columns[dataTable.columns.length-1].field"></p-sortIcon>
+    </th>
+</ng-container>
+<ng-container *ngIf="section==='body'">
+    <td align="center">{{row.createdBy}}</td>
+    <td align="center">{{row.createdDatetime | date : 'dd/MM/yyyy hh:mm:ss'}}</td>
+    <td align="center">{{row.lastUpdatedBy}}</td>
+    <td align="center">{{row.lastUpdatedDatetime | date : 'dd/MM/yyyy hh:mm:ss'}}</td>
+</ng-container>

@@ -1,0 +1,13 @@
+<div [ngSwitch]="isAuthenticated()">
+    <div *ngSwitchCase="false">
+        <div class="container">
+            <app-login></app-login>
+        </div>
+    </div>
+    <div *ngSwitchCase="true">
+        <app-nav></app-nav>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
