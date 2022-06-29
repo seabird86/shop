@@ -50,11 +50,13 @@
             "styles": [
               "src/styles.scss",
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeflex/primeflex.scss",
-              "node_modules/flag-icon-css/css/flag-icon.min.css"
+              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/flag-icons/css/flag-icons.min.css"
             ],
             "scripts": [
-              
+
             ],
             "vendorChunk": true,
             "extractLicenses": false,

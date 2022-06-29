@@ -5,7 +5,7 @@ import {
 import { TranslateService } from "@ngx-translate/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { Principal } from "../../common/service/principal.service";
-import { isUndefined } from "util";
+import { AppObject } from "../../common/utils/app-object.utils";
 import { SelectItem } from "primeng/api";
 @Injectable()
 export class UtilsService {
@@ -21,7 +21,7 @@ export class UtilsService {
     const arr = [];
     for (const itm of items) {
       this.translate.get(itm.label).subscribe(value => {
-        if (!isUndefined(id)) {
+        if (!AppObject.isUndefined(id)) {
           if (id !== 1 && itm.value !== "ORG" && itm.value !== null) {
             itm.label = value;
             arr.push(itm);
@@ -40,7 +40,7 @@ export class UtilsService {
   getItemsNotLag(items: SelectItem[], id?): SelectItem[] {
     const arr = [];
     for (const itm of items) {
-      if (!isUndefined(id)) {
+      if (!AppObject.isUndefined(id)) {
         if (itm.value !== null) {
           arr.push(itm);
         }

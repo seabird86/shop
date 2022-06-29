@@ -1,5 +1,7 @@
 # Compiled class file
 *.class
+*.angular
+.DS_Store
 
 # Log file
 *.log

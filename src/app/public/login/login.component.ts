@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser } from "angularx-social-login";
+import { SocialAuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser } from "@abacritt/angularx-social-login";
 import { TranslateService } from '@ngx-translate/core';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Principal } from '../../common/service/principal.service';

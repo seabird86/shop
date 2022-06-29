@@ -3,7 +3,7 @@ import { SessionStorageService } from 'ngx-webstorage';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { KEY_TOKEN } from '../../common/constants/common.constants';
 import { NotificationService } from './notification.service';
-import { SocialUser } from 'angularx-social-login';
+import { SocialUser } from '@abacritt/angularx-social-login';
 @Injectable({
     providedIn: 'root',
   })
@@ -24,7 +24,7 @@ export class Principal implements CanActivate {
     getUser(): SocialUser {
         let user = this.retrieveUser();
         if (user == null) {
-            this.notification.warn('Session expired');
+            // this.notification.warn('Session expired');
             this.router.navigate(['/']);
             return user;
         }

@@ -1,6 +1,6 @@
 
 import { PagingRes } from './user.model';
-import { isUndefined } from 'util';
+import { AppObject } from '../utils/app-object.utils';
 import { AppString } from '../utils/app-string.utils';
 import { SelectItem, SortMeta } from 'primeng/api';
 
@@ -26,7 +26,7 @@ export class DataTable<T> {
 
     constructor(cols?: any[], stdCols?: boolean) {
         this.columns = cols || [];
-        if (!isUndefined(stdCols)) {
+        if (!AppObject.isUndefined(stdCols)) {
             this.columns.push(
                 { field: 'created_by' },
                 { field: 'created_datetime' },
@@ -36,7 +36,7 @@ export class DataTable<T> {
         }
     }
     public getOrder(): string {
-        if (!isUndefined(this.multiSortMeta)) {
+        if (!AppObject.isUndefined(this.multiSortMeta)) {
             const arr = new Array();
             for (const e of this.multiSortMeta) {
                 arr.push(e.field + ':' + (e.order === 1 ? 'asc' : 'desc'));
@@ -60,7 +60,7 @@ export class DataTable<T> {
     }
     setData2(data: T[], start?: number) {
         this.data = data;
-        if (!isUndefined(start)) {
+        if (!AppObject.isUndefined(start)) {
             let count = start;
             for (const e of this.data) {
                 (e as any)['seqNo'] = ++count;
@@ -70,7 +70,7 @@ export class DataTable<T> {
 
     setData(data: T[], start?: number) {
         this.data = data;
-        if (!isUndefined(start)) {
+        if (!AppObject.isUndefined(start)) {
             let count = start;
             for (const e of this.data) {
                 (e as any)['seqNo'] = ++count ||0;
@@ -105,7 +105,7 @@ export class DataTableRes<T> {
         this.recordsTotal = res.paging.total;
         this.recordsFiltered = res.paging.total;
         this.data = res.data;
-        if (!isUndefined(start)) {
+        if (!AppObject.isUndefined(start)) {
             let count = start;
             for (const e of this.data) {
                 (e as any)['seqNo'] = ++count;
@@ -121,7 +121,7 @@ export class DataTableNonPage<T> {
         this.recordsTotal = 100;
         this.recordsFiltered = 100;
         this.data = res;
-        if (!isUndefined(0)) {
+        if (!AppObject.isUndefined(0)) {
             let count = 0;
             for (const e of this.data) {
                 (e as any)['seqNo'] = ++count;

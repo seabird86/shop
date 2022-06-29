@@ -1,6 +1,6 @@
-<p-progressBar mode="indeterminate" [style]="{'height': '6px'}" [class.p-d-none]="!loading" class="fixed-top"></p-progressBar>
+<p-progressBar mode="indeterminate" [style]="{'height': '6px'}" [class.hidden]="!loading" class="fixed-top p-d-none"></p-progressBar>
 <p-toast></p-toast>
 <p-confirmDialog header="{{'confirmation'|translate}}" icon="fa fa-exclamation-triangle" width="425" acceptLabel="{{'yes'|translate}}"
     rejectLabel="{{'no'|translate}}"></p-confirmDialog>
 <router-outlet></router-outlet>
-<p-progressSpinner class="fixed-bottom" [class.p-d-none]="!loading" strokeWidth="5" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>
+<p-progressSpinner class="fixed-bottom" [class.hidden]="!loading" strokeWidth="5" fill="#EEEEEE" animationDuration=".5s"></p-progressSpinner>

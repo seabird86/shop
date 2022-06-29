@@ -1,10 +1,10 @@
 <p-menubar>
     <app-language></app-language>
 </p-menubar>
-<div class="p-d-flex p-jc-center">
+<div class="flex justify-content-center">
     <p-card header="{{'SIGNIN'|translate}}">
         <ng-template pTemplate="footer">
-            <div class="p-mb-3">
+            <div class="col-6">
             <button pButton pRipple icon="pi pi-google" class="p-button-rounded p-button-danger p-button-outlined" label="Google Account" style="width:178px"
                 (click)="signInWithGoogle()"></button><br/>
             </div>

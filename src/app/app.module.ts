@@ -8,7 +8,7 @@ import { APP_BASE_HREF, HashLocationStrategy } from '@angular/common';
 import {NgxWebstorageModule} from 'ngx-webstorage';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider,FacebookLoginProvider } from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider,FacebookLoginProvider } from '@abacritt/angularx-social-login';
 
 /* PrimeNG Module */
 import { TreeTableModule } from 'primeng/treetable';

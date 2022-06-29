@@ -1,5 +1,5 @@
 import { AppString } from "../utils/app-string.utils";
-import { isUndefined } from "util";
+import { AppObject } from "../utils/app-object.utils";
 
 export class MtApi {
   constructor(
@@ -24,13 +24,13 @@ export class MtApi {
       return (
         "gw" +
         url +
-        (isUndefined(param) ? "" : "?" + AppString.joinParam(param))
+        (AppObject.isUndefined(param) ? "" : "?" + AppString.joinParam(param))
       );
     }
     return (
       "app/api" +
       url +
-      (isUndefined(param) ? "" : "?" + AppString.joinParam(param))
+      (AppObject.isUndefined(param) ? "" : "?" + AppString.joinParam(param))
     );
   }
 }

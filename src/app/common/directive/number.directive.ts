@@ -4,7 +4,7 @@ import { NgControl, NG_VALIDATORS, AbstractControl } from '@angular/forms';
 import { NotificationService } from '../service/notification.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppString } from '../utils/app-string.utils';
-import { isUndefined } from 'util';
+import { AppObject } from '../utils/app-object.utils';
 
 @Directive({
     selector: '[app-number]',
@@ -34,7 +34,7 @@ export class NumberDirective {
 }
 
 export function valNumber(control: AbstractControl) {
-    if (control.value !== null && control.value !== '' && !isUndefined(control.value)) {
+    if (control.value !== null && control.value !== '' && !AppObject.isUndefined(control.value)) {
         const digit = control.value + '';
         if (Number(digit) < 0) {
             return { digit: true };

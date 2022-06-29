@@ -5,7 +5,7 @@ import { APIConfig } from "../../common/constants/api.constants";
 import { TranslateService } from "@ngx-translate/core";
 import { NavService } from "./nav.service";
 import { Principal } from "../../common/service/principal.service";
-import { isUndefined } from "util";
+import { AppObject } from "../../common/utils/app-object.utils";
 import { MenuItem } from "primeng/api";
 import { NotificationService } from "src/app/common/service/notification.service";
 @Component({
@@ -103,27 +103,27 @@ export class NavComponent extends AbstractComponent implements OnInit {
       this.translate.get(menu1.label || "").subscribe(value => {
         menu1.label = value;
       });
-      if (!isUndefined(menu1.items)) {
+      if (!AppObject.isUndefined(menu1.items)) {
         for (const menu2 of <MenuItem[]>menu1.items) {
-          if (!isUndefined(menu2.routerLink)) {
+          if (!AppObject.isUndefined(menu2.routerLink)) {
             menu2.command = () => {
               this.toggleVisible();
             };
           }
 
-          if (!isUndefined(menu2.label)) {
+          if (!AppObject.isUndefined(menu2.label)) {
             this.translate.get(menu2.label).subscribe(value => {
               menu2.label = value;
             });
           }
-          if (!isUndefined(menu2.items)) {
+          if (!AppObject.isUndefined(menu2.items)) {
             for (const menu3 of <MenuItem[]>menu2.items) {
-              if (!isUndefined(menu3.routerLink)) {
+              if (!AppObject.isUndefined(menu3.routerLink)) {
                 menu3.command = () => {
                   this.toggleVisible();
                 };
               }
-              if (!isUndefined(menu3.label)) {
+              if (!AppObject.isUndefined(menu3.label)) {
                 this.translate.get(menu3.label).subscribe(value => {
                   menu3.label = value;
                 });
@@ -138,16 +138,16 @@ export class NavComponent extends AbstractComponent implements OnInit {
       this.translate.get(menu1.label || "").subscribe(value => {
         menu1.label = value;
       });
-      if (!isUndefined(menu1.items)) {
+      if (!AppObject.isUndefined(menu1.items)) {
         for (const menu2 of <MenuItem[]>menu1.items) {
-          if (!isUndefined(menu2.label)) {
+          if (!AppObject.isUndefined(menu2.label)) {
             this.translate.get(menu2.label).subscribe(value => {
               menu2.label = value;
             });
           }
-          if (!isUndefined(menu2.items)) {
+          if (!AppObject.isUndefined(menu2.items)) {
             for (const menu3 of <MenuItem[]>menu2.items) {
-              if (!isUndefined(menu3.label)) {
+              if (!AppObject.isUndefined(menu3.label)) {
                 this.translate.get(menu3.label).subscribe(value => {
                   menu3.label = value;
                 });

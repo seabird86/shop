@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SocialUser } from 'angularx-social-login';
+import { SocialUser } from '@abacritt/angularx-social-login';
 import { MtApi } from '../common/constants/api.constants';
 import { NotificationService } from '../common/service/notification.service';
 import { Principal } from '../common/service/principal.service';
