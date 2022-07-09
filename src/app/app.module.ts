@@ -205,9 +205,9 @@ const routes: Routes = [
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('704837689637-jatiki2n3gpq0o48bm08a433t6vllkke.apps.googleusercontent.com',{
+            provider: new GoogleLoginProvider('XXXXXX.apps.googleusercontent.com',{
               'scope':'openid email profile',
-              'apiKey':'AIzaSyC6qc6hrY73i5lLdiYOHw6UKF8_GY4uX9w'
+              'apiKey':'XXXXX'
             })            
           },
           {
